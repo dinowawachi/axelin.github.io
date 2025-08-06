@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Axelin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: hsl(0, 2%, 46%);
+      color: #663c3c;
+    }
+    #header {
+      padding: 50px;
+      text-align: center;
+      color: rgb(255, 255, 255);
+    }
+    .perfil img {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .nav {
+      list-style: none;
+      padding: 0; margin: 0;
+      text-align: center;
+      background-color: #85c283;
+    }
+    .nav > li {
+      display: inline-block;
+      position: relative;
+    }
+    .nav > li > a {
+      display: block;
+      padding: 10px 20px;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .nav li ul {
+      display: none;
+      position: absolute;
+      background-color: #9523ec;
+      padding: 0;
+      list-style: none;
+      min-width: 150px;
+      z-index: 1000;
+    }
+    .nav li:hover > ul {
+      display: block;
+    }
+    .nav li ul li {
+      display: block;
+    }
+    .nav li ul li a {
+      padding: 10px;
+      color: rgb(252, 252, 252);
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+    }
+    .nav li ul li ul {
+      left: 100%;
+      top: 0;
+      position: absolute;
+    }
+    .nav li a:hover {
+      background-color: #eb7d17;
+    }
+    .contenido {
+      max-width: 800px;
+      background: white;
+      padding: 30px;
+      margin: 30px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgb(253, 249, 2);
+      font-size: 18px;
+      line-height: 1.6;
+      display: none;
+    }
+    .contenido.active {
+      display: block;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      color: #ff6161;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .back-btn:hover {
+      text-decoration: underline;
+    }
+    .contenido img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255, 35, 226, 0.966);
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .social-links a {
+      color: #1d98eb;
+      text-decoration: underline;
+      margin: 0 8px;
+    }
+    .social-links a:hover {
+      color: #e690b4;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="perfil">
+      <img src="axelinyh.png" alt="axelinyh">
+      <p>Soy <strong>axelin_oficial</strong>, y te doy la bienvenida a mi blog 😊.</p>
+    </div>
+
+    <nav>
+      <ul class="nav">
+        <li><a href="#" onclick="showContent('inicio')">Inicio</a></li>
+        <li><a href="#">Categorías</a>
+          <ul>
+            <li><a href="#" onclick="showContent('tecnologia')">Tecnología</a></li>
+            <li><a href="#" onclick="showContent('moda')">Moda</a></li>
+            <li><a href="#" onclick="showContent('viajes')">Viajes</a></li>
+            <li><a href="#">Comida</a>
+              <ul>
+                <li><a href="#" onclick="showContent('recetas')">Recetas</a></li>
+                <li><a href="#" onclick="showContent('restaurantes')">Restaurantes</a></li>
+                <li><a href="#" onclick="showContent('ingredientes')">Ingredientes</a></li>
+                <li><a href="#" onclick="showContent('bebidas')">Bebidas</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">Sobre mí</a>
+          <ul>
+            <li><a href="#" onclick="showContent('biografia')">Biografía</a></li>
+            <li><a href="#" onclick="showContent('experiencia')">Experiencia</a></li>
+            <li><a href="#" onclick="showContent('habilidades')">Habilidades</a></li>
+            <li><a href="#" onclick="showContent('Monetizar')">Monetizar</a></li>
+          </ul>
+        </li>
+        <li><a href="#" onclick="showContent('contacto')">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Contenidos -->
+  <section id="inicio" class="contenido active">
+    <h1>Inicio</h1>
+    <p><strong>Bienvenido a mi blog</strong> Aquí encontrarás contenido cuidadosamente elaborado sobre una variedad de temas que inspiran, informan y conectan. Desde los últimos avances en <strong>tecnología</strong>, pasando por las tendencias más destacadas en <strong>moda</strong>, hasta experiencias únicas en <strong>viajes</strong> y recomendaciones sobre <strong>gastronomía</strong>, este espacio está pensado para ofrecerte información de calidad y una lectura enriquecedora. Te invito a explorar, descubrir y compartir. ¡Gracias por ser parte de esta comunidad ✨!</p>
+  </section>
+
+  <section id="tecnologia" class="contenido">
+    <h1>Tecnología</h1>
+    <img src="tecnologia.png" alt="Tecnología">
+    <p>La tecnología ocupa un papel protagónico en nuestra sociedad contemporánea. Ha dejado de ser una herramienta complementaria para convertirse en un eje transversal que atraviesa todos los aspectos de nuestra vida: desde lo personal hasta lo profesional, desde la educación hasta la industria. Vivimos en una era en la que los dispositivos inteligentes, la conectividad constante y los avances en inteligencia artificial moldean no solo cómo interactuamos, sino también cómo pensamos, aprendemos y trabajamos.</p>
+    <p>El uso cotidiano de teléfonos inteligentes, computadoras, plataformas digitales y asistentes virtuales ha transformado profundamente nuestra manera de comunicarnos. Hoy en día es posible mantener conversaciones en tiempo real con personas en cualquier parte del mundo, acceder a información ilimitada en segundos y colaborar en proyectos sin necesidad de estar físicamente presentes. Esta inmediatez y accesibilidad han impulsado nuevas dinámicas sociales, educativas y laborales.</p>
+    <p>Por otro lado, la evolución constante del hardware y el software ha dado lugar a desarrollos sorprendentes en campos como la robótica, la automatización, la medicina digital, la realidad virtual y aumentada, entre otros. Estos avances no solo mejoran la eficiencia y precisión en diversas industrias, sino que también generan nuevas oportunidades para la innovación y el emprendimiento.</p>
+    <p>La robótica, por ejemplo, está revolucionando sectores como la manufactura, la logística y la salud, permitiendo automatizar procesos repetitivos y realizar tareas de alto riesgo con mayor seguridad. Al mismo tiempo, la inteligencia artificial está ayudando a tomar decisiones más informadas, analizar grandes volúmenes de datos y personalizar servicios como nunca antes.</p>
+    <p>Sin embargo, este desarrollo acelerado también nos plantea desafíos importantes: la necesidad de una alfabetización digital inclusiva, la protección de los datos personales, la gestión ética de la tecnología y la preparación para un mercado laboral en constante transformación. Adaptarnos a este entorno requiere no solo competencias técnicas, sino también pensamiento crítico, creatividad y responsabilidad.</p>
+    <p>En conclusión, la tecnología no es solo una herramienta: es un agente de cambio que influye directamente en la evolución de nuestras sociedades. Comprenderla, adoptarla con criterio y utilizarla de manera ética es clave para construir un futuro más conectado, equitativo e innov</p>
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+
+  <section id="moda" class="contenido">
+    <h1>Moda</h1>
+    <img src="moda.png" alt="Moda">
+    <p>La moda va más allá de la ropa: es una manifestación auténtica de nuestra personalidad, estado de ánimo y visión del mundo. A través del estilo, comunicamos quiénes somos sin necesidad de palabras. En este espacio dedicado a la moda, descubrirás mucho más que simples prendas: encontrarás una guía integral para expresar tu esencia con confianza y originalidad.</p>
+    <p>Aquí exploramos las <strong>últimas tendencias </strong> del mundo fashion, analizamos cómo adaptarlas a tu propio estilo y te mostramos <strong>combinaciones versátiles </strong> para distintas ocasiones. Desde outfits minimalistas hasta propuestas audaces, ofrecemos ideas prácticas para ayudarte a vestir con intención y coherencia.</p>
+    <p>Además, compartimos <strong>consejos de estilo </strong> para sacar el máximo provecho a tu guardarropa, elegir colores y cortes que te favorezcan, y mantenerte fiel a tu autenticidad. También abordamos cómo vestirse adecuadamente según <strong>cada estación del año</strong>, entendiendo que la moda puede ser funcional, cómoda y creativa a la vez.</p>
+    <p>Ya sea que busques inspiración diaria o estés iniciando tu camino en el mundo de la moda, este espacio está diseñado para acompañarte a descubrir tu propio lenguaje visual y vestir con propósito ☄️.</p>
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+
+  <section id="viajes" class="contenido">
+    <h1>Viajes</h1>
+    <img src="viajes.png" alt="Viajes">
+    <p>Viajar es mucho más que trasladarse de un lugar a otro; es una experiencia transformadora que nos conecta con nuevas culturas, paisajes sorprendentes y formas distintas de ver la vida. Cada destino es una oportunidad para aprender, crecer y coleccionar momentos que dejan huella.</p>
+    <P>En esta sección del blog, te invito a descubrir un universo de posibilidades. Encontrarás <strong>recomendaciones de destinos fascinantes</strong>, desde los más populares hasta aquellos <strong>rincones escondidos</strong> que merecen ser explorados. Compartimos también <strong>tips útiles para viajeros</strong>, que van desde cómo empacar de forma inteligente hasta cómo moverse con seguridad y comodidad en cualquier parte del mundo.</P>
+    <P>Además, ofrecemos <strong> rutas económicas</strong> pensadas para aprovechar al máximo tu presupuesto sin sacrificar la calidad de la experiencia. Ya sea que busques aventuras en la naturaleza, escapadas urbanas o inmersión cultural, aquí hallarás inspiración y consejos prácticos para planificar tu próximo viaje de manera informada y consciente.</P>
+    <P>Este espacio está creado para apasionados del viaje, curiosos del mundo y soñadores que saben que cada paso fuera de casa es un paso hacia el descubrimiento.</P>
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+
+  <section id="recetas" class="contenido">
+    <h1>Recetas</h1>
+    <img src="recetas.png" alt="Recetas">
+    <p>¿Te apasiona la cocina o simplemente disfrutas preparar algo delicioso en casa? Este espacio está pensado para ti. Aquí encontrarás una cuidada selección de <strong>recetas prácticas y sabrosas,</strong>, ideales tanto para quienes están dando sus primeros pasos en la cocina como para los más experimentados que buscan nuevas ideas.</p>
+    <p>Desde <strong>platos tradicionales</strong> que evocan el sabor del hogar hasta <strong>opciones rápidas y creativas</strong> para el almuerzo o la cena, cada receta está diseñada para ser accesible, nutritiva y, sobre todo, hecha con amor. También incluimos sugerencias para presentaciones, sustituciones de ingredientes y consejos que harán de cada preparación una experiencia sencilla y gratificante.</p>
+    <p>Este rincón culinario no solo busca compartir recetas, sino también fomentar el gusto por cocinar como una forma de expresión, cuidado personal y conexión con los demás. Porque cuando se cocina con cariño, el resultado siempre es especial.</p>
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+
+  <section id="restaurantes" class="contenido">
+    <h1>Restaurantes</h1>
+    <img src="restaurantes.png" alt="Restaurantes">
+    <p>¿Estás buscando dónde disfrutar una buena comida en <strong>Huaquillas</strong>? En esta sección encontrarás una cuidadosa selección de restaurantes que destacan por su sabor, ambiente y variedad. Desde opciones <strong>económicas y accesibles</strong>, perfectas para una salida casual, hasta lugares <strong>elegantes y únicos</strong> ideales para ocasiones especiales, te ofrecemos recomendaciones para todos los gustos y presupuestos.</p>
+    <p>Explora propuestas gastronómicas que van desde la cocina tradicional ecuatoriana hasta fusiones innovadoras, con atención en la calidad de los ingredientes, el servicio y la experiencia del comensal. Cada lugar ha sido elegido por su autenticidad, sabor y la atmósfera que ofrece, para que disfrutes mucho más que solo una comida: una experiencia memorable.</p>
+    <p>Ya seas turista o residente, esta guía te ayudará a descubrir los rincones culinarios más destacados de <strong>Huaquillas.</strong> ¡Prepárate para saborear lo mejor de la ciudad!</p>
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+
+  <section id="ingredientes" class="contenido">
+    <h1>Ingredientes</h1>
+    <img src="ingredientes.png" alt="Ingredientes">
+    <p>Todo gran platillo comienza con buenos ingredientes. En esta sección del blog exploramos el papel fundamental que desempeñan en la cocina, no solo como componentes de una receta, sino como fuentes de sabor, valor nutricional y creatividad culinaria.</p>
+    <p>Aprende a conocer a fondo cada ingrediente: sus <strong>propiedades naturales</strong>, sus <strong>beneficios para la salud </strong> las mejores formas de manipularlos y combinarlos para potenciar tanto el sabor como el valor nutritivo de tus preparaciones. Desde vegetales frescos hasta especias exóticas, desde proteínas saludables hasta granos esenciales, descubrirás cómo cada elemento aporta algo único al resultado final.</p>
+    <p>También te ofrecemos <strong> consejos prácticos </strong> para seleccionar ingredientes de calidad, conservarlos adecuadamente y utilizarlos de manera eficiente en tus recetas diarias. Ya sea que estés iniciándote en la cocina o busques perfeccionar tus habilidades, aquí encontrarás información útil para transformar cada plato en una experiencia rica, saludable y equilibrada.</p>
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+
+  <section id="bebidas" class="contenido">
+    <h1>Bebidas</h1>
+    <img src="bebidas.png" alt="Bebidas">
+    <p>Desde un refrescante jugo natural hasta un cóctel sofisticado, las bebidas tienen el poder de complementar cualquier ocasión y elevar la experiencia culinaria. En esta sección dedicada a los amantes de los sabores líquidos, te invitamos a descubrir el arte de preparar <strong>refrescos, jugos, batidos y cócteles</strong> que destacan por su equilibrio entre lo saludable y lo delicioso.</p>
+    <p>Aquí aprenderás a crear bebidas para todos los gustos y momentos: desde opciones <strong>nutritivas y naturales</strong> ideales para el día a día, hasta combinaciones más <strong>creativas y festivas</strong> perfectas para compartir en reuniones o celebraciones. Cada receta está pensada para que puedas prepararla fácilmente en casa, con ingredientes frescos y al alcance.</p>
+    <p>Además, te ofrecemos consejos sobre técnicas de preparación, presentación y combinaciones que realzan el sabor y el valor nutricional de cada bebida. Ya sea que busques hidratación, energía, relajación o simplemente algo delicioso, esta sección te proporcionará inspiración constante para llenar tu vaso de buenas ideas.</p>
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+
+  <section id="biografia" class="contenido">
+    <h1>Biografía</h1>
+    <img src="biografia.jpg" alt="Biografía">
+    <p>Mi nombre es <strong>Axelin</strong> y soy una persona apasionada por el conocimiento, la creatividad y la conexión con los demás. Este blog nace con el propósito de compartir ideas, experiencias y contenido útil que inspire y aporte valor a tu vida diaria.</p>
+    <p>Aquí encontrarás una amplia variedad de temas, que van desde <strong>tecnología, moda, gastronomía y viajes</strong>, hasta recomendaciones prácticas para el día a día. Cada artículo está pensado para ofrecerte información relevante, consejos aplicables y una lectura amena que te motive a seguir explorando.</p>
+    <p>Además de escribir, me encanta crear contenido digital. Disfruto compartir en plataformas como <strong>TikTok, Instagram, Clapper y YouTube</strong>, donde expreso mi creatividad a través de videos, recomendaciones, tutoriales y momentos del día a día. Creo firmemente en el poder de las redes sociales como herramientas para conectar, aprender y crecer en comunidad.</p>
+    <p>Este blog es una extensión de ese entusiasmo por comunicar y construir puentes entre personas con intereses similares. Te invito a ser parte de esta comunidad, explorar los contenidos y compartir tus propias experiencias.</p>
+    <p>¡Gracias por estar aquí y acompañarme en este viaje 🌟!</p>
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+
+  <section id="experiencia" class="contenido">
+    <h1>Experiencia</h1>
+    <img src="experiencias.png" alt="Experiencia laboral">
+    <p>Cuento con varios años de experiencia en el mundo de la <strong>creación de contenido digital</strong>, el <strong>diseño web</strong> y el <strong>marketing digital</strong>, áreas que me han permitido desarrollar una visión integral sobre cómo comunicar de manera efectiva en plataformas digitales. A lo largo de mi trayectoria, he trabajado en diversos proyectos que abarcan desde la producción de contenido creativo hasta estrategias de posicionamiento y crecimiento en redes sociales.</p>
+    <p>Me apasiona enseñar y compartir conocimientos sobre temas actuales, útiles y relevantes. Disfruto transformar ideas en contenido visualmente atractivo, funcional y orientado a resultados, tanto para blogs como para redes sociales y sitios web. Gracias a mi experiencia en <strong>marketing</strong>, también comprendo la importancia de conectar con las audiencias, generar valor y construir comunidades en línea.</p>
+    <p>Una de mis principales fortalezas es la publicidad y creación de contenido en <strong>TikTok</strong>, plataforma en la que he trabajado campañas <strong>promocionales, tendencias</strong> y formatos creativos que generan impacto y engagement. Además, disfruto compartir contenido en otras plataformas como <strong>Instagram, Clapper y YouTube</strong>, donde abordo temas actuales, tutoriales, consejos y experiencias personales.</p>
+    <p>Me apasiona enseñar y compartir conocimientos útiles y relevantes, así como inspirar a otras personas a explorar su potencial digital. Este blog nace como una extensión de ese propósito: ofrecer un espacio dinámico, informativo y accesible para quienes buscan aprender, crear o emprender en el mundo digital.</p>
+    <p>Este blog es una extensión de todo aquello que me inspira: la comunicación, la creatividad, el aprendizaje continuo y el deseo de aportar contenido de calidad. Aquí encontrarás recursos, ideas y herramientas pensadas para ayudarte a crecer, inspirarte y mantenerte informado en un mundo digital en constante evolución.</p>
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+
+  <section id="habilidades" class="contenido">
+    <h1>Habilidades</h1>
+    <img src="habilidades.png" alt="Habilidades">
+    <p>A lo largo de mi formación y experiencia, he desarrollado un conjunto de <strong>habilidades técnicas y creativas</strong> que me permiten abordar proyectos digitales de forma integral, eficiente y con una visión estratégica.</p>
+    <p>Entre mis principales competencias destacan:</p>
+    <p>🔹 <strong> Programación web</strong> con conocimientos en lenguajes y herramientas que permiten crear sitios funcionales, modernos y optimizados para diversos dispositivos.</p>
+    <p>🔹<strong>Edición de imágenes,</strong>aplicando técnicas de diseño visual para mejorar la presentación de contenidos, identidad gráfica y material para redes sociales.</p>
+    <p>🔹 <strong>Redacción creativa,</strong>ideal para generar textos claros, atractivos y adaptados a distintos públicos y plataformas, desde blogs hasta contenido promocional.</p>
+    <p>🔹<strong> Marketing digital</strong> con experiencia en planificación y ejecución de campañas en redes sociales, posicionamiento de marca, publicidad en TikTok, y estrategias de crecimiento orgánico y pagado.</p>
+    <p>Estas habilidades me permiten combinar lo técnico con lo visual y lo comunicativo, ofreciendo un enfoque completo en cada proyecto que desarrollo. A través de este blog, pongo en práctica todas estas capacidades para brindarte contenido de valor, bien estructurado y pensado para el entorno digital actual.</p>
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+  
+  <section id="Monetizar" class="contenido">
+    <h1>Habilidades</h1>
+    <img src="monetizar.jpg" alt="monetizar">
+    <p><strong>💰 Cómo Monetizar en TikTok con Videos y Lives desde Ecuador (Guía Paso a Paso)</strong></p>
+    <p>TikTok no solo es una plataforma para entretener o viralizar contenido, también se ha convertido en una fuente real de ingresos para creadores en todo el mundo, incluido Ecuador. A continuación, te explico cómo puedes monetizar tus videos y tus transmisiones en vivo paso a paso:</p>
+    <p>🔹 <strong> ✅ Requisitos básicos para monetizar en TikTok</strong></p>
+    <p>Antes de pensar en generar ingresos, debes cumplir ciertos criterios</p>
+    <p>🔹 Tener <strong>más de 18 años.</strong></p>
+    <p>🔹 Tener al menos <strong> 1.000 seguidores.</strong></p>
+    <p>🔹 Haber acumulado<strong>100.000 vistas de video en los últimos 30 días</strong> (para el Fondo de Creadores, si está disponible).</p>
+    <p>Contar con una <strong>cuenta Pro (Creador o Negocios).</strong></p>
+    <p>Residir en un país donde las funciones de monetización estén activas (Ecuador aún no accede a todas, pero hay alternativas).</p>
+    <p><strong>🎥 1. Monetizar con tus videos de TikTok</strong></p>
+    <p>Aunque el <strong> de Creadores de TikTok </strong>no está disponible oficialmente en Ecuador, puedes monetizar tus videos de las siguientes maneras:</p>
+    <p><strong>1.1. Marketing de afiliados</strong></p>
+    <p>Promociona productos o servicios usando enlaces personalizados. Cuando alguien compra usando tu enlace, ganas una comisión.</p>
+    <p><strong>👉 Cómo hacerlo:</strong></p>
+    <p>Regístrate en plataformas como<strong>TikTok Shop (si está disponible), Amazon Afiliados, Hotmart, </strong>o <strong>ClickBank.</strong></p>
+    <p>Crea contenido relacionado y añade el enlace en tu bio o comentarios.</p>
+    <p><strong>1.2. Publicidad directa de marcas</strong></p>
+    <p><strong>👉 Cómo hacerlo:</strong></p>
+    <p>Crea un<strong> media kit</strong> con tus estadísticas.</p>
+    <p>Busca marcas locales o contacta agencias de influencer marketing en Ecuador.</p>
+    <p>Publica contenido patrocinado de forma creativa y auténtica.</p>
+    <p><strong>1.3. Redirigir tráfico a otros negocios</strong></p>
+    <p>Puedes usar TikTok como vitrina para atraer clientes a tu emprendimiento, canal de YouTube, Instagram o página de ventas.</p>
+    <p>👉 Ejemplo: Si vendes ropa, muestra outfits en TikTok y dirige a tus seguidores a tu cuenta de Instagram o sitio web.</p>
+    <p><strong>2.1. Activa la función Live</strong></p>
+    <p>Tener<strong>más de 1.000 seguidores.</strong></p>
+    <p>Tener<strong>más de 16 años </strong>(pero necesitas tener 18 para recibir regalos).</p>
+    <p><strong>2.2. Gana regalos virtuales</strong></p>
+    <p>Durante tus lives, tus seguidores pueden enviarte regalos virtuales (rosas, unicornios, fuegos, etc.). Cada regalo tiene un valor en <strong>monedas TikTok,</strong>que puedes canjear por dinero real.</p>
+    <p><strong>👉 Pasos:</strong></p>
+    <p><strong>1.</strong> lives entretenidos, educativos o dinámicos.</p>
+    <p><strong>2.</strong>Invita a tus seguidores a apoyarte con regalos</p>
+    <p>Ve al apartado de<strong> Balance</strong> en tu perfil para ver tus ganancias.</p>
+    <p><strong>3.</strong>Vincula tu cuenta PayPal para retirar tus fondos.</p>
+    <p><strong>💡 Tips adicionales para monetizar mejor</strong></p>
+    <p>Publica constantemente y conoce tu<strong> nicho</strong> (moda, educación, humor, tecnología, etc.).</p>
+    <p>Usa música en tendencia y hashtags relevantes.</p>
+    <p>Sé auténtico y responde a los comentarios.</p>
+    <p>Aprovecha las<strong>tendencias locales en Ecuador.</strong></p>
+    <p>Colabora con otros creadores ecuatorianos.</p>
+    <p><strong>📝 Conclusión</strong></p>
+    <p>Aunque TikTok aún no ofrece todas las herramientas de monetización directamente en Ecuador<strong>sí es posible ganar dinero</strong>con creatividad, constancia y estrategia. Ya sea con videos patrocinados, marketing de afiliados o TikTok Live, tienes varias oportunidades para convertir tu contenido en ingresos reales.</p>
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+  
+  <section id="contacto" class="contenido">
+    <h1>Contacto</h1>
+    <img src="contacto.png" alt="Contacto">
+    <p>¿Te gustaría ponerte en contacto conmigo? Puedes escribirme al correo electrónico:<a href="mailto:yaguachiherreraaxeljeremy9@gmail.com" style="color: #1d98eb; text-decoration: underline;">
+        yaguachiherreraaxeljeremy9@gmail.com
+      </a>
+     También puedes seguirme en mis redes sociales, donde comparto contenido de interés y actualizaciones sobre mis proyectos. ¡Será un gusto conectar contigo!
+    </p>
+
+    <div class="social-links">
+      <a href="https://vm.tiktok.com/ZSSNyNBkq/" target="_blank" title="TikTok">TikTok</a> |
+      <a href="https://www.instagram.com/axelinyh?igsh=MjVjb2R2cDYydWoy" target="_blank" title="Instagram">Instagram</a> |
+      <a href="https://www.facebook.com/share/16ia4qQ6Ci/" target="_blank" title="Facebook">Facebook</a> |
+      <a href="https://youtube.com/@axelin_official?si=e9gbsW02LV8u4DeR" target="_blank" title="YouTube">YouTube</a> |
+      <a href="https://clapperapp.com/axelin_oficial?is_invite=1&r=jJ5rB47Rop&c=in&m=co" target="_blank" title="Clapper">Clapper</a>
+    </div>
+
+    <a class="back-btn" onclick="showContent('inicio')">⬅ Volver al inicio</a>
+  </section>
+
+  <script>
+    function showContent(id) {
+      document.querySelectorAll('.contenido').forEach(section => {
+        section.classList.remove('active');
+      });
+      const el = document.getElementById(id);
+      if(el) el.classList.add('active');
+      window.scrollTo(0,0);
+    }
+  </script>
+</body>
+</html>
